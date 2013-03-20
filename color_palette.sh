@@ -7,8 +7,8 @@ for i in $(seq 0 4 255); do
 		for k in $(seq 1 $(expr 3 - ${#j})); do
 			printf " "
 		done
-		printf "\x1b[38;5;${j}mcolour${j}"
+		printf "\x1b[48;5;${j}mcolour${j}"
 		[[ $(expr $j % 4) != 3 ]] && printf "    "
 	done
-	printf "\n"
+	printf "\x1b[0m\n"
 done
